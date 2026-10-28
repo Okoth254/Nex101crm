@@ -85,6 +85,8 @@ jobs:
         run: pnpm plugins:generate --check
       - name: Docs reference pages are up to date
         run: pnpm docs:reference --check
+      - name: No upstream branding or promo links
+        run: bash scripts/audit-external-links.sh
       - name: Unit tests (DB-backed suites run in the integration job)
         # Convention: suites that need a real database
         # (__tests__/invoices/lifecycle.test.ts,

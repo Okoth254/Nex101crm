@@ -1,0 +1,16 @@
+# Fixed strings. A hit line containing any of these is accepted by audit-external-links.sh.
+# Seed/test identifiers
+test@nextcrm.app
+# Published image name (kept until this fork publishes its own)
+ghcr.io/pdovhomilja/nextcrm-app
+# Legal attribution required by the MIT license
+fork of NextCRM
+# Third-party library credit in the tech stack list
+https://ui.shadcn.com/
+# Code comments about the upstream auth model
+NextCRM does not use
+which NextCRM does not use
+# Demo flag compared against the upstream demo URL
+https://demo.nextcrm.io
+# Web-search query strings sent to the enrichment agent
+"powered by"

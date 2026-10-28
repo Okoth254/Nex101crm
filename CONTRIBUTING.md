@@ -1,8 +1,8 @@
-# Contributing to NextCRM
+# Contributing to NEX101 Hub
 
-First off, thank you for considering contributing to NextCRM! It's people like you that make NextCRM a great tool for the community.
+First off, thank you for considering contributing to NEX101 Hub! It's people like you that make NEX101 Hub a great tool for the community.
 
-This document provides guidelines and instructions for contributing to the NextCRM project.
+This document provides guidelines and instructions for contributing to the NEX101 Hub project.
 
 ## Table of Contents
 
@@ -42,19 +42,19 @@ Before you begin, ensure you have the following installed:
 - **Docker** (runs the local PostgreSQL via `pnpm db:up`)
 - **Git** (version control)
 
-The full guide is at [docs.nextcrm.app → Local setup](https://docs.nextcrm.app/docs/developers/local-setup).
+The full guide is in the docs app: Developers → Local setup (`apps/docs/content/docs/developers/local-setup.mdx`).
 
 ### Development Setup
 
 1. **Fork the repository**
    
-   Click the "Fork" button on the [GitHub repository](https://github.com/pdovhomilja/nextcrm-app) to create your own copy.
+   Click the "Fork" button on the [GitHub repository](https://github.com/Okoth254/Nex101crm) to create your own copy.
 
 2. **Clone your fork**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/nextcrm-app.git
-   cd nextcrm-app
+   git clone https://github.com/YOUR_USERNAME/Nex101crm.git
+   cd Nex101crm
    ```
 
 3. **Install dependencies**
@@ -109,7 +109,7 @@ The full guide is at [docs.nextcrm.app → Local setup](https://docs.nextcrm.app
 
 ### Reporting Bugs
 
-If you find a bug, please [open an issue](https://github.com/pdovhomilja/nextcrm-app/issues) with the following information:
+If you find a bug, please [open an issue](https://github.com/Okoth254/Nex101crm/issues) with the following information:
 
 - Clear, descriptive title
 - Steps to reproduce the bug
@@ -191,7 +191,7 @@ We welcome feature suggestions! When suggesting a feature:
 - **Playwright** end-to-end tests: `pnpm test:e2e` (headless), `pnpm test:e2e:ui`, `pnpm test:e2e:debug`. Specs are in `tests/e2e/`; `tests/auth.setup.ts` signs in the seeded test user.
 - Add tests for new features and make sure existing ones pass before you open a PR.
 
-Details and the CI pipeline: [docs.nextcrm.app → Testing](https://docs.nextcrm.app/docs/developers/testing).
+Details and the CI pipeline: Developers → Testing in the docs app (`apps/docs/content/docs/developers/testing.mdx`).
 
 ### Database Changes
 
@@ -206,7 +206,7 @@ Do not use `prisma db push`; every environment applies the committed migrations.
 
 ### Internationalization
 
-NextCRM supports multiple languages (English, Czech, German, Ukrainian):
+NEX101 Hub supports multiple languages (English, Czech, German, Ukrainian):
 
 - Use `next-intl` for translations
 - Add new translation keys to `/locales/{lang}.json`
@@ -236,7 +236,7 @@ Familiarize yourself with the project layout:
 
 ## Areas to Contribute
 
-Based on our [roadmap](https://github.com/pdovhomilja/nextcrm-app#roadmap), here are priority areas:
+Based on our [roadmap](https://github.com/Okoth254/Nex101crm#roadmap), here are priority areas:
 
 ### 🎯 High Priority
 
@@ -263,15 +263,13 @@ Based on our [roadmap](https://github.com/pdovhomilja/nextcrm-app#roadmap), here
 
 ## Getting Help
 
-- **Discord**: Join our community at [https://discord.gg/Dd4Aj6S4Dz](https://discord.gg/Dd4Aj6S4Dz)
-- **GitHub Discussions**: Use for questions and general discussion
+- **GitHub Discussions**: Use for questions and general discussion (if enabled)
 - **Issues**: For bug reports and feature requests
-- **Twitter**: [@nextcrmapp](https://twitter.com/nextcrmapp)
 
 ## Recognition
 
-Contributors will be recognized in our README and release notes. Thank you for helping make NextCRM better!
+Contributors will be recognized in our README and release notes. Thank you for helping make NEX101 Hub better!
 
 ---
 
-By contributing to NextCRM, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+By contributing to NEX101 Hub, you agree that your contributions will be licensed under the [MIT License](LICENSE).

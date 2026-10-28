@@ -1,47 +1,34 @@
-<a href="https://nextcrm.app/">
-  <h1 align="center">NextCRM</h1>
-</a>
+<p align="center">
+  <img alt="NEX101 Hub" src="public/brand/nex101-mark.svg" width="96" height="96" />
+</p>
+
+<h1 align="center">NEX101 Hub</h1>
 
 <p align="center">
-<img alt="OG" src="public/images/opengraph-image.png" />
+NEX101 Hub is an AI-first CRM and business hub built with Next.js 16, React 19, TypeScript, PostgreSQL (Prisma 7), and shadcn/ui. Features CRM, project management, invoicing, document storage, email client, AI-powered features, vector search, and MCP server for AI agent access.
 </p>
 
 <p align="center">
-NextCRM is an open-source CRM built with Next.js 16, React 19, TypeScript, PostgreSQL (Prisma 7), and shadcn/ui. Features CRM, project management, invoicing, document storage, email client, AI-powered features, vector search, and MCP server for AI agent access.
-</p>
-
-<p align="center">
-<a href="https://twitter.com/nextcrmapp">
-<img alt="X (formerly Twitter) URL" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fnextcrmapp">
-</a>
-  <a href="https://github.com/pdovhomilja/nextcrm-app/blob/main/LICENSE">
-    <img alt="GitHub License" src="https://img.shields.io/github/license/pdovhomilja/nextcrm-app">
+  <a href="https://github.com/Okoth254/Nex101crm/blob/main/LICENSE">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/Okoth254/Nex101crm">
   </a>
 </p>
 
 <p align="center">
-   <a href="#online-demo"><strong>Introduction</strong></a> ·
    <a href="#whats-new"><strong>What's New</strong></a> ·
    <a href="#tech-stack--features"><strong>Tech Stack + Features</strong></a> ·
    <a href="#roadmap"><strong>Roadmap</strong></a> ·
    <a href="#installation"><strong>Installation</strong></a> ·
-   <a href="#repo-activity"><strong>Repo activity</strong></a> ·
-   <a href="#license"><strong>License</strong></a> ·
-   <a href="https://discord.gg/Dd4Aj6S4Dz"><strong>Discord</strong></a>
+   <a href="#license"><strong>License</strong></a>
 </p>
 <br/>
 
-## Online Demo
-
-You can try it here [demo.nextcrm.io](https://demo.nextcrm.io), login via Google account or create new user and password.
-
----
 
 ## What's New
 
 ### 🧾 Invoices Module — Full Invoicing Workflow *(NEW)*
 
-Complete invoicing system built into NextCRM — create, issue, pay, duplicate, and cancel invoices with multi-currency support, tax rates, and PDF generation.
+Complete invoicing system built into NEX101 Hub — create, issue, pay, duplicate, and cancel invoices with multi-currency support, tax rates, and PDF generation.
 
 - **Invoice types** — Invoice, Credit Note, Proforma, and Receipt
 - **Line items** — per-line quantity, unit price, discount %, and tax rate with automatic totals calculation
@@ -112,9 +99,9 @@ ENV variable  →  Admin system-wide  →  User profile
 
 ### 🤖 MCP Server — AI Agent Access to CRM Data *(NEW)*
 
-NextCRM now ships with a built-in [Model Context Protocol](https://modelcontextprotocol.io/) server, letting AI agents (Claude, Cursor, custom agents) read and write CRM data directly.
+NEX101 Hub now ships with a built-in [Model Context Protocol](https://modelcontextprotocol.io/) server, letting AI agents (Claude, Cursor, custom agents) read and write CRM data directly.
 
-Every tool with its input fields, generated from the code: [MCP tools reference](https://docs.nextcrm.app/docs/reference/mcp-tools).
+Every tool with its input fields, generated from the code: [MCP tools reference](apps/docs/content/docs/reference/mcp-tools.mdx).
 
 **Authentication:** Generate Bearer tokens (`nxtc__...`) from your profile page. Tokens are SHA-256 hashed — the raw value is shown only once and never stored.
 
@@ -124,7 +111,7 @@ Every tool with its input fields, generated from the code: [MCP tools reference]
   "mcpServers": {
     "nextcrm": {
       "type": "http",
-      "url": "https://your-nextcrm.com/api/mcp/mcp",
+      "url": "https://your-domain.com/api/mcp/mcp",
       "headers": { "Authorization": "Bearer nxtc__your_token_here" }
     }
   }
@@ -187,7 +174,7 @@ Global search across all CRM entities from a single search bar — grouped resul
 - [Vercel AI SDK 6.x](https://sdk.vercel.ai/) – Unified AI interface
 - [pgvector](https://github.com/pgvector/pgvector) – PostgreSQL vector extension for similarity search (HNSW indexes)
 - [E2B](https://e2b.dev/) – Cloud sandboxes with real Chrome browser for AI-driven web research and target enrichment
-- [MCP Server](https://modelcontextprotocol.io/) – tools for every CRM module ([reference](https://docs.nextcrm.app/docs/reference/mcp-tools)) via `mcp-handler` (Vercel MCP adapter), Bearer token auth, streamable HTTP (`/api/mcp/mcp`) + legacy SSE (`/api/mcp/sse`, needs `REDIS_URL`) transports
+- [MCP Server](https://modelcontextprotocol.io/) – tools for every CRM module ([reference](apps/docs/content/docs/reference/mcp-tools.mdx)) via `mcp-handler` (Vercel MCP adapter), Bearer token auth, streamable HTTP (`/api/mcp/mcp`) + legacy SSE (`/api/mcp/sse`, needs `REDIS_URL`) transports
 
 ### Data fetching
 
@@ -207,11 +194,10 @@ Global search across all CRM entities from a single search bar — grouped resul
 
 - [next-intl](https://next-intl-docs.vercel.app/) – Internationalization for Next.js — English, Czech, German, Ukrainian
 
-![hero](/public/og.png)
 
 ## Roadmap
 
-1. ✅ Docker version — complete bundle to run NextCRM on-premise
+1. ✅ Docker version — complete bundle to run NEX101 Hub on-premise
 2. ✅ Upgrade to Next.js 16 — running on Next.js 16 with React 19
 3. ✅ i18n / localization — 4 languages (English, Czech, German, Ukrainian)
 4. ✅ Email client — IMAP/SMTP email client built in
@@ -236,7 +222,7 @@ We use [resend.com](https://resend.com) + [react.email](https://react.email) as 
 
 ### Mailtrap (Email API/SMTP)
 
-NextCRM supports [Mailtrap](https://mailtrap.io) as an alternative email provider to Resend, for both production sending and safe dev/staging testing through a single API.
+NEX101 Hub supports [Mailtrap](https://mailtrap.io) as an alternative email provider to Resend, for both production sending and safe dev/staging testing through a single API.
 
 **Sending emails (production):**
 
@@ -250,18 +236,12 @@ Use a Mailtrap Sandbox inbox instead of a production domain during development, 
 
 ## Reports
 
-We use Tremor charts as a tool for creating charts in NextCRM
+We use Tremor charts as a tool for creating charts in NEX101 Hub
 
-![hero](/public/reports.png)
-
-## Video (YouTube channel with functions showcase)
-
-[Youtube Channel](https://www.youtube.com/@NextCRM_IO) </br>
-[Invoice module (video)](https://youtu.be/NSMsBMy07Pg)
 
 ## Documentation
 
-Read the docs at [docs.nextcrm.app](https://docs.nextcrm.app): user guide, admin guide and developer guide. Source lives in [`apps/docs`](apps/docs).
+Read the docs in [`apps/docs`](apps/docs): user guide, admin guide and developer guide.
 
 ## Installation
 
@@ -270,8 +250,8 @@ Read the docs at [docs.nextcrm.app](https://docs.nextcrm.app): user guide, admin
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/pdovhomilja/nextcrm-app.git
-   cd nextcrm-app
+   git clone https://github.com/Okoth254/Nex101crm.git
+   cd Nex101crm
    ```
 
 1. Install the preset:
@@ -344,13 +324,13 @@ Read the docs at [docs.nextcrm.app](https://docs.nextcrm.app): user guide, admin
 
 ## Docker Installation (Recommended for Self-Hosting)
 
-The fastest way to run NextCRM is with Docker Compose. The provided `docker-compose.yml` bundles everything you need: the app, PostgreSQL (with pgvector), MinIO for file storage, and Inngest for background jobs. No manual setup of databases, buckets, or migrations — it all happens automatically on first start.
+The fastest way to run NEX101 Hub is with Docker Compose. The provided `docker-compose.yml` bundles everything you need: the app, PostgreSQL (with pgvector), MinIO for file storage, and Inngest for background jobs. No manual setup of databases, buckets, or migrations — it all happens automatically on first start.
 
 ### Quick Start
 
 ```sh
-git clone https://github.com/pdovhomilja/nextcrm-app.git
-cd nextcrm-app
+git clone https://github.com/Okoth254/Nex101crm.git
+cd Nex101crm
 cp .env.docker .env
 nano .env                # set ADMIN_EMAIL to a real email you own
 docker compose up -d
@@ -366,13 +346,13 @@ docker compose up -d
 Open [http://localhost:3000](http://localhost:3000) — the app is ready, the schema is migrated, and the seeded admin user matches the `ADMIN_EMAIL` you set.
 
 > [!IMPORTANT]
-> NextCRM uses **passwordless Email OTP** for login. You MUST set `ADMIN_EMAIL` to an address you control AND provide a `RESEND_API_KEY` (or another email provider) so OTP codes can actually be delivered. Without an email provider, you can still log in by reading the OTP straight from the database — convenient for first-time testing, not for production.
+> NEX101 Hub uses **passwordless Email OTP** for login. You MUST set `ADMIN_EMAIL` to an address you control AND provide a `RESEND_API_KEY` (or another email provider) so OTP codes can actually be delivered. Without an email provider, you can still log in by reading the OTP straight from the database — convenient for first-time testing, not for production.
 
 ### What you get
 
 | Service | Purpose | Exposed |
 |---|---|---|
-| `app` | NextCRM (Next.js standalone build) | `localhost:3000` |
+| `app` | NEX101 Hub (Next.js standalone build) | `localhost:3000` |
 | `postgres` | PostgreSQL 17 with pgvector | internal only |
 | `minio` | S3-compatible object storage | `127.0.0.1:9000` |
 | `inngest` | Background job runner (self-hosted, signed requests) | internal only |
@@ -478,43 +458,14 @@ docker compose exec postgres psql -U nextcrm -d nextcrm \
 
 Use that OTP on the sign-in page. After login, configure an email provider from the Admin panel so future logins work normally.
 
-## Contact
-
-[www.dovhomilja.cz](https://www.dovhomilja.cz)
-</br>
-[<img alt="X (formerly Twitter) URL" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fdovhomilja">
-](https://twitter.com/dovhomilja)
-
 ## Contributing
 
-We are open to the NextCRM community contributions. Every contribution is welcome.
+Every contribution is welcome.
 
 ### Issues
 
-- [Open an issue](https://github.com/pdovhomilja/nextcrm-app/issues) if you find a bug or have a suggestion for improvements.
-
-### NextCRM Super heroes
-
-<a href="https://github.com/pdovhomilja/nextcrm-app/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=pdovhomilja/nextcrm-app" />
-</a>
-
-Made with [contrib.rocks](https://contrib.rocks).
-
-## Repo Activity
-
-![Alt](https://repobeats.axiom.co/api/embed/e6bed6e15724f38c278ad2edcf0573a1bb24bed6.svg "Repobeats analytics image")
-
-## Star History
-
-<a href="https://www.star-history.com/?type=timeline&repos=pdovhomilja%2Fnextcrm-app">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=pdovhomilja/nextcrm-app&type=timeline&theme=dark&legend=top-left&sealed_token=K4hXRI40If9iqw449EdBDzIuSwzTy862Gd3Z9DHyD2G0rXXE5AtVKWCtzv6OFB8hbw0TKBkWevH-XU9LETwZgkF0AuD3p8_ZxXj4NTuWP5PdeV6C-xjboh2XiRP68ouog-IYwkdXzGmWkI5Vcn82111CbOIX2u8snev61AI_fx8-d0Stlr7ftKsAVWbX" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=pdovhomilja/nextcrm-app&type=timeline&legend=top-left&sealed_token=K4hXRI40If9iqw449EdBDzIuSwzTy862Gd3Z9DHyD2G0rXXE5AtVKWCtzv6OFB8hbw0TKBkWevH-XU9LETwZgkF0AuD3p8_ZxXj4NTuWP5PdeV6C-xjboh2XiRP68ouog-IYwkdXzGmWkI5Vcn82111CbOIX2u8snev61AI_fx8-d0Stlr7ftKsAVWbX" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=pdovhomilja/nextcrm-app&type=timeline&legend=top-left&sealed_token=K4hXRI40If9iqw449EdBDzIuSwzTy862Gd3Z9DHyD2G0rXXE5AtVKWCtzv6OFB8hbw0TKBkWevH-XU9LETwZgkF0AuD3p8_ZxXj4NTuWP5PdeV6C-xjboh2XiRP68ouog-IYwkdXzGmWkI5Vcn82111CbOIX2u8snev61AI_fx8-d0Stlr7ftKsAVWbX" />
- </picture>
-</a>
+- [Open an issue](https://github.com/Okoth254/Nex101crm/issues) if you find a bug or have a suggestion for improvements.
 
 ## License
 
-Licensed under the [MIT license](https://github.com/pdovhomilja/nextcrm-app/blob/main/LICENSE).
+Licensed under the [MIT license](LICENSE). NEX101 Hub is a fork of NextCRM; the original copyright notice (Pavel Dovhomilja, 2023) is kept in the license file, as the MIT license requires.

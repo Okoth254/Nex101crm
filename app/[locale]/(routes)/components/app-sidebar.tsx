@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Puzzle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LogoMark, LogoWordmark } from "@/components/brand/Logo";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 import getDashboardMenuItem from "./menu-items/Dashboard";
@@ -27,9 +28,9 @@ import { partnerNavItems } from "@/lib/partner-routes";
 /**
  * AppSidebar Component - Task Groups 1.2, 2.2-2.7, 3.1, 5.3, 5.4
  *
- * Core sidebar component for NextCRM application layout.
+ * Core sidebar component for the NEX101 application layout.
  * Implements shadcn/ui sidebar pattern with:
- * - Logo and "N" branding symbol with rotation animation
+ * - Logo and NEX101 brand mark with rotation animation
  * - Build version display in footer (when expanded)
  * - Navigation with Dashboard and module items
  * - Nav-user section in footer for user profile and actions
@@ -54,7 +55,7 @@ import { partnerNavItems } from "@/lib/partner-routes";
  *
  * Phase 5 Updates (Design Consistency):
  * - Task 5.3: Removed duration-200 from app name animation (uses Tailwind default)
- * - Task 5.3: Kept duration-500 on "N" symbol for intentional brand emphasis
+ * - Task 5.3: Kept duration-500 on the brand mark for intentional brand emphasis
  * - Task 5.4: Changed build version text-gray-500 to text-muted-foreground for theme support
  *
  * @param modules - Array of enabled modules from system_Modules_Enabled table
@@ -143,24 +144,24 @@ export function AppSidebar({
             isExpanded ? "gap-x-4" : "justify-center",
           )}
         >
-          {/* "N" Branding Symbol with rotation animation */}
+          {/* Brand mark with rotation animation */}
           <div
             className={cn(
-              "flex-shrink-0 border rounded-full px-4 py-2 transition-transform duration-500",
+              "flex-shrink-0 rounded-md bg-white/95 p-1 transition-transform duration-500",
               isExpanded && "rotate-[360deg]",
             )}
           >
-            N
+            <LogoMark className="size-8" />
           </div>
 
           {/* App Name - visible when expanded, hidden when collapsed */}
           <h1
             className={cn(
-              "origin-left font-medium text-xl transition-all overflow-hidden whitespace-nowrap",
+              "origin-left text-xl transition-all overflow-hidden whitespace-nowrap",
               !isExpanded ? "w-0 opacity-0" : "w-auto opacity-100",
             )}
           >
-            {appName}
+            <LogoWordmark appName={appName} />
           </h1>
         </div>
       </SidebarHeader>

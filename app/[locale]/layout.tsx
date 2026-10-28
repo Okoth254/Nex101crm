@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { Inter } from "next/font/google";
+import { Figtree, Syncopate, Unbounded } from "next/font/google";
 
 import { ReactNode } from "react";
 
@@ -11,7 +11,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/app/providers/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const figtree = Figtree({ subsets: ["latin", "latin-ext"], variable: "--font-sans" });
+// Open-licence stand-ins for Stretch Pro (wordmark) and Monumental (headlines).
+// To use the licensed fonts, replace these two with next/font/local and keep the same variable names.
+const wordmark = Syncopate({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-wordmark" });
+const display = Unbounded({ subsets: ["latin", "latin-ext"], variable: "--font-display" });
 
 type Props = {
   children: ReactNode;
@@ -29,25 +33,15 @@ export async function generateMetadata(props: Props) {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
     title: t("title"),
     description: t("description"),
-    openGraph: {
-      images: [
-        {
-          url: "/images/opengraph-image.png",
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-    },
     twitter: {
-      cardType: "summary_large_image",
-      image: "/images/opengraph-image.png",
-      width: 1200,
-      height: 630,
-      alt: t("title"),
+      card: "summary_large_image",
     },
   };
 }
+
+export const viewport = {
+  themeColor: "#CE0054",
+};
 
 export default async function RootLayout(props: Props) {
   const params = await props.params;
@@ -60,7 +54,7 @@ export default async function RootLayout(props: Props) {
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className + " min-h-screen"}>
+      <body className={`${figtree.variable} ${wordmark.variable} ${display.variable} font-sans min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}

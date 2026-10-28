@@ -17,14 +17,25 @@ module.exports = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+  			display: ['var(--font-display, var(--font-sans))', 'system-ui', 'sans-serif'],
+  			wordmark: ['var(--font-wordmark, var(--font-sans))', 'system-ui', 'sans-serif']
+  		},
   		colors: {
+  			brand: {
+  				magenta: '#CE0054',
+  				maroon: '#4C0224',
+  				amber: '#E29D23',
+  				navy: '#24395B'
+  			},
   			tremor: {
   				brand: {
-  					faint: '#eff6ff',
-  					muted: '#bfdbfe',
-  					subtle: '#60a5fa',
-  					DEFAULT: '#3b82f6',
-  					emphasis: '#1d4ed8',
+  					faint: '#fff1f6',
+  					muted: '#f7b3cd',
+  					subtle: '#e8478a',
+  					DEFAULT: '#CE0054',
+  					emphasis: '#4C0224',
   					inverted: '#ffffff'
   				},
   				background: {
@@ -49,11 +60,11 @@ module.exports = {
   			},
   			'dark-tremor': {
   				brand: {
-  					faint: '#0B1229',
-  					muted: '#172554',
-  					subtle: '#1e40af',
-  					DEFAULT: '#3b82f6',
-  					emphasis: '#60a5fa',
+  					faint: '#1a0610',
+  					muted: '#4C0224',
+  					subtle: '#9a0340',
+  					DEFAULT: '#CE0054',
+  					emphasis: '#f0679d',
   					inverted: '#030712'
   				},
   				background: {

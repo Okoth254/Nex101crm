@@ -4,6 +4,7 @@ import { prismadb } from "@/lib/prisma";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import TryAgain from "./components/TryAgain";
+import { LogoMark } from "@/components/brand/Logo";
 import { Users } from "@prisma/client";
 
 const PendingPage = async () => {
@@ -25,8 +26,9 @@ const PendingPage = async () => {
       {/*       <pre>
         <code>{JSON.stringify(session, null, 2)}</code>
       </pre> */}
-      <div className="flex flex-col">
-        <h1 className="text-3xl">
+      <div className="flex flex-col items-center gap-3">
+        <LogoMark className="size-16" />
+        <h1 className="font-display text-3xl text-center">
           {process.env.NEXT_PUBLIC_APP_NAME} - your account must be allowed by
           Admin
         </h1>

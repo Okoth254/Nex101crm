@@ -4,6 +4,7 @@ import { prismadb } from "@/lib/prisma";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import TryAgain from "./components/TryAgain";
+import { LogoMark } from "@/components/brand/Logo";
 import { Users } from "@prisma/client";
 import {
   Card,
@@ -12,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const PendingPage = async () => {
+const InactivePage = async () => {
   const adminUsers: Users[] = await prismadb.users.findMany({
     where: {
       role: "admin",
@@ -28,7 +29,10 @@ const PendingPage = async () => {
 
   return (
     <Card className="p-10 space-y- m-10">
-      <CardTitle className="flex justify-center py-10">
+      <div className="flex justify-center">
+        <LogoMark className="size-16" />
+      </div>
+      <CardTitle className="font-display flex justify-center py-10">
         Your account has been deactivated by Admin
       </CardTitle>
       <CardDescription className="py-3">
@@ -66,4 +70,4 @@ const PendingPage = async () => {
   );
 };
 
-export default PendingPage;
+export default InactivePage;

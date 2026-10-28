@@ -25,7 +25,7 @@ export const crmUserTools = [
   {
     name: "crm_list_users",
     description:
-      "List NextCRM users, to resolve a person to the user ID needed by assigned_to. " +
+      "List NEX101 Hub users, to resolve a person to the user ID needed by assigned_to. " +
       "Returns active users by default. Managers and admins additionally see email, " +
       "role, status and last login.",
     schema: z.object({

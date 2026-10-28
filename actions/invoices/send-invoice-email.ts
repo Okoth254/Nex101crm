@@ -58,7 +58,10 @@ export async function sendInvoiceEmail(input: SendInvoiceEmailInput) {
   const pdfBuffer = Buffer.concat(chunks);
 
   const resend = await resendHelper();
-  const fromEmail = process.env.EMAIL_FROM ?? `invoices@${process.env.NEXT_PUBLIC_APP_DOMAIN ?? "nextcrm.app"}`;
+  const appHost = process.env.NEXT_PUBLIC_APP_URL
+    ? new URL(process.env.NEXT_PUBLIC_APP_URL).hostname
+    : "localhost";
+  const fromEmail = process.env.EMAIL_FROM ?? `invoices@${process.env.NEXT_PUBLIC_APP_DOMAIN ?? appHost}`;
 
   const subject =
     input.subject ?? `Invoice ${invoice.number ?? invoice.id} — ${invoice.account.name}`;

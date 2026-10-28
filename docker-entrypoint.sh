@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-echo "==> NextCRM Docker Entrypoint"
+echo "==> NEX101 Hub Docker Entrypoint"
 
 # Connection for pg_isready/psql: the DB_* variables when set (compose files),
 # otherwise DATABASE_URL without its query string (libpq rejects Prisma
@@ -154,5 +154,5 @@ else
 fi
 
 # --- 6. Start the application ---
-echo "==> Starting NextCRM..."
+echo "==> Starting NEX101 Hub..."
 exec node server.js

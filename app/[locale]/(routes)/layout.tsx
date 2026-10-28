@@ -19,27 +19,6 @@ export const metadata: Metadata = {
   ),
   title: "",
   description: "",
-  openGraph: {
-    images: [
-      {
-        url: "/images/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      {
-        url: "/images/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "",
-      },
-    ],
-  },
 };
 
 export default async function AppLayout({
@@ -118,7 +97,7 @@ export default async function AppLayout({
         dict={translations}
         session={session}
         pluginNav={pluginNav}
-        appName={process.env.NEXT_PUBLIC_APP_NAME || "NextCRM"}
+        appName={process.env.NEXT_PUBLIC_APP_NAME || "NEX101 Hub"}
       />
       <SidebarInset>
         <Header

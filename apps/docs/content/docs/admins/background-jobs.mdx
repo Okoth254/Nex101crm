@@ -3,7 +3,7 @@ title: Background jobs
 description: What runs in Inngest, on which schedule, what each job needs, and how to run Inngest in production.
 ---
 
-NextCRM runs asynchronous and scheduled work with [Inngest](https://www.inngest.com/). The app serves its functions at `/api/inngest`. An Inngest server calls that endpoint to run them, and the app sends events to the server when something happens (a record is saved, a document is uploaded).
+NEX101 Hub runs asynchronous and scheduled work with [Inngest](https://www.inngest.com/). The app serves its functions at `/api/inngest`. An Inngest server calls that endpoint to run them, and the app sends events to the server when something happens (a record is saved, a document is uploaded).
 
 If Inngest is not running, the app still works, but nothing below happens: no embeddings, no email sync, no scheduled sends.
 

@@ -1,15 +1,15 @@
 ---
 title: Requirements
-description: What a NextCRM instance needs to run, and which external services are optional.
+description: What a NEX101 Hub instance needs to run, and which external services are optional.
 ---
 
-NextCRM is one Next.js application plus three backing services. The Docker Compose files in the repository bundle all of them.
+NEX101 Hub is one Next.js application plus three backing services. The Docker Compose files in the repository bundle all of them.
 
 ## Core components
 
 | Component | Purpose | Bundled in Docker Compose |
 |---|---|---|
-| NextCRM app | Next.js standalone server on port 3000 | `app` (built from `Dockerfile`) |
+| NEX101 Hub app | Next.js standalone server on port 3000 | `app` (built from `Dockerfile`) |
 | PostgreSQL 17 with pgvector | All application data, plus vector embeddings for semantic search | `postgres` (`pgvector/pgvector:pg17`) |
 | S3-compatible object storage | Uploaded documents, avatars, invoice PDFs | `minio` |
 | Inngest | Background jobs and scheduled tasks | `inngest` (dev server) |

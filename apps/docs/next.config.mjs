@@ -6,7 +6,7 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   // Keep the build inside apps/docs; otherwise Next picks the repo root
-  // (the NextCRM app) as the project root.
+  // (the NEX101 Hub app) as the project root.
   turbopack: { root: import.meta.dirname },
   outputFileTracingRoot: import.meta.dirname,
   // Older versions live at /docs/v0.35/... but render from app/docs-versions,

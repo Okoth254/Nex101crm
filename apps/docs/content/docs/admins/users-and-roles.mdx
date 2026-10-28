@@ -7,7 +7,7 @@ Manage users under **Administration → Users** (`/admin/users`).
 
 ## Roles
 
-NextCRM has three roles:
+NEX101 Hub has three roles:
 
 | Role | Administration | CRM records and projects | Reports |
 |---|---|---|---|
@@ -17,7 +17,7 @@ NextCRM has three roles:
 
 "Records they own" means records assigned to them or created by them (for accounts, also accounts they watch; for project boards, also boards shared with them). The same rules apply in the web app, the API and the MCP server; they are enforced in `lib/authz`.
 
-Older instances may still have the legacy role values `member` and `viewer`. NextCRM treats `member` as `manager` and `viewer` as `user`.
+Older instances may still have the legacy role values `member` and `viewer`. NEX101 Hub treats `member` as `manager` and `viewer` as `user`.
 
 ## User status
 
@@ -35,7 +35,7 @@ Only `ACTIVE` users get through: pages, server actions, API routes and the MCP s
 
 ### Invitation
 
-At the top of the Users page, enter a name, email and language and send the invitation. NextCRM creates the user with role `user` and status `ACTIVE` and sends an invitation email through Resend. Inviting fails with an error if no Resend key is configured.
+At the top of the Users page, enter a name, email and language and send the invitation. NEX101 Hub creates the user with role `user` and status `ACTIVE` and sends an invitation email through Resend. Inviting fails with an error if no Resend key is configured.
 
 ### Self sign-up
 

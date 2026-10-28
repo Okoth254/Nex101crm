@@ -1,15 +1,9 @@
 import { createGetUrl } from 'fumadocs-core/source';
 
-export const appName = 'NextCRM';
+export const appName = 'NEX101 Hub';
 export const docsRoute = '/docs';
 export const docsImageRoute = '/og/docs';
 export const docsContentRoute = '/llms.mdx/docs';
-
-export const gitConfig = {
-  user: 'pdovhomilja',
-  repo: 'nextcrm-app',
-  branch: 'main',
-};
 
 const getContentUrl = createGetUrl(docsContentRoute);
 

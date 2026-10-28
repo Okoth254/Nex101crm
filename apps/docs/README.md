@@ -1,6 +1,6 @@
-# NextCRM docs
+# NEX101 Hub docs
 
-Source of [docs.nextcrm.app](https://docs.nextcrm.app), built with [Fumadocs](https://fumadocs.dev) on Next.js.
+Documentation for NEX101 Hub, built with [Fumadocs](https://fumadocs.dev) on Next.js.
 
 ```bash
 cd apps/docs
@@ -17,7 +17,7 @@ The site deploys from its own `Dockerfile` in this folder (build context `apps/d
 
 The sidebar has a version picker: **Latest** (this folder, i.e. `main`) and one entry per minor release (0.36, 0.35, …). Nothing has to be done after a release; the next docs build picks up the new tag.
 
-- `pnpm build` first runs `scripts/fetch-versions.mjs`. It lists the release tags of the public repo (`git ls-remote`, override the repo with `DOCS_VERSIONS_REPO`), takes the newest patch tag of each minor, and writes `content/versions/` (gitignored):
+- `pnpm build` first runs `scripts/fetch-versions.mjs`. It lists the release tags of the repo (`git ls-remote`, override the repo with `DOCS_VERSIONS_REPO`), takes the newest patch tag of each minor, and writes `content/versions/` (gitignored):
   - 0.24 and newer: `apps/docs/content/docs` from that tag, with absolute `/docs/...` links pointed at the same version.
   - 0.1–0.23 (before the docs existed): one page with that minor's `CHANGELOG.md` entries, unchanged.
 - URLs: Latest stays at `/docs/...`; a version is `/docs/v0.35/...`. `next.config.mjs` rewrites those to `app/docs-versions/[version]`, which has its own sidebar per version. `/docs-switch` keeps the reader on the same page when the target version has it, else opens that version's first page.

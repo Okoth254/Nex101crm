@@ -1,9 +1,9 @@
 ---
 title: Local setup
-description: Run NextCRM on your machine with a Docker Postgres, the Inngest dev server and pnpm dev.
+description: Run NEX101 Hub on your machine with a Docker Postgres, the Inngest dev server and pnpm dev.
 ---
 
-This page sets up the "host dev" workflow: the app runs on your machine with `pnpm dev`, and only Postgres and Inngest run in Docker. If you only want to run NextCRM, not develop it, use the full Docker stack described in the admin guide instead.
+This page sets up the "host dev" workflow: the app runs on your machine with `pnpm dev`, and only Postgres and Inngest run in Docker. If you only want to run NEX101 Hub, not develop it, use the full Docker stack described in the admin guide instead.
 
 ## Prerequisites
 
@@ -24,8 +24,8 @@ Corepack picks up the pinned pnpm version from `packageManager` if you have it e
 ### Clone and install
 
 ```bash
-git clone https://github.com/pdovhomilja/nextcrm-app.git
-cd nextcrm-app
+git clone https://github.com/Okoth254/Nex101crm.git
+cd Nex101crm
 pnpm install
 ```
 
@@ -62,7 +62,7 @@ BETTER_AUTH_URL=http://localhost:3000
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 EMAIL_ENCRYPTION_KEY= # openssl rand -hex 32 (encrypts stored API keys and plugin secrets)
 INNGEST_ID=nextcrm
-INNGEST_APP_NAME=NextCRM
+INNGEST_APP_NAME="NEX101 Hub"
 INNGEST_DEV=1
 INNGEST_BASE_URL=http://localhost:8288
 ```
@@ -117,7 +117,7 @@ Open `http://localhost:3000`. The Inngest dashboard at `http://localhost:8288` s
 
 ## Sign in locally
 
-NextCRM uses passwordless email OTP (Better Auth). You do not need a working email provider in development. Outside production, the Better Auth `testUtils` plugin captures every OTP, and a dev-only route returns it:
+NEX101 Hub uses passwordless email OTP (Better Auth). You do not need a working email provider in development. Outside production, the Better Auth `testUtils` plugin captures every OTP, and a dev-only route returns it:
 
 ```bash
 curl -X POST localhost:3000/api/auth/email-otp/send-verification-otp \

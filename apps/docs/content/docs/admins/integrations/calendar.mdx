@@ -25,7 +25,7 @@ The app builds the URI from `NEXT_PUBLIC_APP_URL`, so it must match that value e
 
 ### Configure scopes
 
-NextCRM requests `https://www.googleapis.com/auth/calendar.readonly`, plus `https://www.googleapis.com/auth/calendar.events` when a user chooses read-write access. Add them to the consent screen. These are sensitive scopes: an external app in testing mode only works for the test users you list, and a Google Workspace "Internal" app only works for accounts in that Workspace.
+NEX101 Hub requests `https://www.googleapis.com/auth/calendar.readonly`, plus `https://www.googleapis.com/auth/calendar.events` when a user chooses read-write access. Add them to the consent screen. These are sensitive scopes: an external app in testing mode only works for the test users you list, and a Google Workspace "Internal" app only works for accounts in that Workspace.
 
 </Step>
 <Step>
@@ -44,7 +44,7 @@ Both compose files pass them to the app; put them in `.env` or your platform's s
 
 ### Connect
 
-Each user opens **Profile → Calendar** and connects their account. NextCRM stores the refresh and access tokens encrypted with `EMAIL_ENCRYPTION_KEY`.
+Each user opens **Profile → Calendar** and connects their account. NEX101 Hub stores the refresh and access tokens encrypted with `EMAIL_ENCRYPTION_KEY`.
 
 </Step>
 </Steps>
@@ -52,7 +52,7 @@ Each user opens **Profile → Calendar** and connects their account. NextCRM sto
 ### Sync
 
 - Every 15 minutes a background job syncs all active connections into CRM calendar events.
-- Connections with read-write access also push changes from NextCRM to Google.
+- Connections with read-write access also push changes from NEX101 Hub to Google.
 - Access level is taken from the scopes Google actually granted, not from what was requested.
 
 ### Connect only from the deployed instance
@@ -75,12 +75,12 @@ Open **Administration → Calendar Settings** (`/admin/calendar-settings`).
 </Step>
 <Step>
 
-Enter the **API token** and click **Save**. The **Webhook signing key** is optional: leave it empty and NextCRM generates one when you subscribe. Both values are stored encrypted. Leaving a field empty keeps the stored value.
+Enter the **API token** and click **Save**. The **Webhook signing key** is optional: leave it empty and NEX101 Hub generates one when you subscribe. Both values are stored encrypted. Leaving a field empty keeps the stored value.
 
 </Step>
 <Step>
 
-Click **Subscribe webhook**. NextCRM looks up your organization and creates an organization-scope subscription for `invitee.created` and `invitee.canceled`. It sends the saved signing key as the subscription's `signing_key`, or generates a random key, saves it and sends that. The subscription points at:
+Click **Subscribe webhook**. NEX101 Hub looks up your organization and creates an organization-scope subscription for `invitee.created` and `invitee.canceled`. It sends the saved signing key as the subscription's `signing_key`, or generates a random key, saves it and sends that. The subscription points at:
 
 ```
 https://crm.example.com/api/crm/calendar/webhooks/calendly

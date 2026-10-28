@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { pickVersions, pinDocLinks, releaseNotesFor } from './versions.mjs';
 
-const repo = process.env.DOCS_VERSIONS_REPO || 'https://github.com/pdovhomilja/nextcrm-app.git';
+const repo = process.env.DOCS_VERSIONS_REPO || 'https://github.com/Okoth254/Nex101crm.git';
 const webRepo = repo.replace(/\.git$/, '');
 const out = path.join(import.meta.dirname, '..', 'content', 'versions');
 const docsDir = 'apps/docs/content/docs';
@@ -55,11 +55,11 @@ try {
     write(
       path.join(out, v.slug, 'index.md'),
       `---
-title: NextCRM ${v.minor} release notes
-description: What changed in NextCRM ${v.minor}, from CHANGELOG.md.
+title: NEX101 Hub ${v.minor} release notes
+description: What changed in NEX101 Hub ${v.minor}, from CHANGELOG.md.
 ---
 
-NextCRM ${v.minor} shipped before this documentation site existed (the docs start at 0.24), so this version has release notes only. They are the ${v.minor} entries of [CHANGELOG.md](${webRepo}/blob/${newest}/CHANGELOG.md), unchanged.
+NEX101 Hub ${v.minor} shipped before this documentation site existed (the docs start at 0.24), so this version has release notes only. They are the ${v.minor} entries of [CHANGELOG.md](${webRepo}/blob/${newest}/CHANGELOG.md), unchanged.
 
 ${releaseNotesFor(changelog, v.minor)}
 `,

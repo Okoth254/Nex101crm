@@ -1,6 +1,6 @@
 ---
 title: Background jobs
-description: How NextCRM uses Inngest for events, scheduled jobs and long-running work.
+description: How NEX101 Hub uses Inngest for events, scheduled jobs and long-running work.
 ---
 
 Slow, external or scheduled work runs in [Inngest](https://www.inngest.com/) functions. Request code sends an event and returns. Inngest calls the app back at `/api/inngest` to run the function, with retries.

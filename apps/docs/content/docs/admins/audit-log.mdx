@@ -3,7 +3,7 @@ title: Audit log
 description: Review every change to CRM records and restore deleted ones.
 ---
 
-NextCRM records changes to accounts, contacts, leads, opportunities and contracts. Each entry stores the entity, the action, a before/after diff of changed fields, the user and the time. Users see the history of a single record on its **History** tab. Admins see everything under **Administration → Audit Log** (`/admin/audit-log`).
+NEX101 Hub records changes to accounts, contacts, leads, opportunities and contracts. Each entry stores the entity, the action, a before/after diff of changed fields, the user and the time. Users see the history of a single record on its **History** tab. Admins see everything under **Administration → Audit Log** (`/admin/audit-log`).
 
 ## Filters
 
@@ -19,4 +19,4 @@ CRM records are soft-deleted: deleting sets a `deletedAt` timestamp and hides th
 
 ## Retention
 
-Nothing in NextCRM deletes audit entries. The table (`crm_AuditLog`) grows with use and is included in a normal database backup.
+Nothing in NEX101 Hub deletes audit entries. The table (`crm_AuditLog`) grows with use and is included in a normal database backup.

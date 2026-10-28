@@ -3,7 +3,7 @@ title: Email
 description: Set up Resend for login codes and system mail, SMTP for notifications, and what users need for their own mailboxes.
 ---
 
-NextCRM sends email through two channels and lets users connect their own mailboxes. Configure Resend first: without it nobody can receive a login code.
+NEX101 Hub sends email through two channels and lets users connect their own mailboxes. Configure Resend first: without it nobody can receive a login code.
 
 | Channel | Configured by | Used for |
 |---|---|---|
@@ -27,7 +27,7 @@ Set the variables and make sure they reach the app container:
 RESEND_API_KEY=re_...
 EMAIL_FROM=crm@example.com          # login codes, invitations, invoices
 RESEND_FROM_EMAIL=crm@example.com   # campaigns, reports, automation notifications
-NEXT_PUBLIC_APP_NAME=NextCRM        # sender display name
+NEXT_PUBLIC_APP_NAME="NEX101 Hub"        # sender display name
 ```
 
 </Step>
@@ -62,7 +62,7 @@ Resend also offers SMTP (`smtp.resend.com`), so one Resend account can serve bot
 
 ## User mailboxes
 
-Users connect IMAP/SMTP accounts in their profile under **Emails**. NextCRM stores the credentials encrypted with `EMAIL_ENCRYPTION_KEY` and syncs every active account every 15 minutes through Inngest. Synced emails are linked to matching CRM records and embedded for search (embedding needs `OPENAI_API_KEY`).
+Users connect IMAP/SMTP accounts in their profile under **Emails**. NEX101 Hub stores the credentials encrypted with `EMAIL_ENCRYPTION_KEY` and syncs every active account every 15 minutes through Inngest. Synced emails are linked to matching CRM records and embedded for search (embedding needs `OPENAI_API_KEY`).
 
 By default the server refuses to connect to mail hosts that resolve to private or internal addresses. If your mail server is on an internal network, set `MAIL_ALLOW_PRIVATE_HOSTS=true`.
 

@@ -1,6 +1,6 @@
 ---
 title: Install with Docker Compose
-description: Run NextCRM with the bundled Postgres, MinIO and Inngest, then sign in as the first admin.
+description: Run NEX101 Hub with the bundled Postgres, MinIO and Inngest, then sign in as the first admin.
 ---
 
 The repository ships a `docker-compose.yml` that runs the whole stack. On first start the container applies database migrations, creates the storage bucket and seeds the first admin account.
@@ -13,8 +13,8 @@ The repository ships a `docker-compose.yml` that runs the whole stack. On first 
 ### Get the code
 
 ```sh
-git clone https://github.com/pdovhomilja/nextcrm-app.git
-cd nextcrm-app
+git clone https://github.com/Okoth254/Nex101crm.git
+cd Nex101crm
 ```
 
 </Step>
@@ -43,7 +43,7 @@ On a server, also set `APP_URL` and `MINIO_PUBLIC_URL` (see [Public URLs](#publi
 docker compose up -d
 ```
 
-Watch the startup with `docker compose logs -f app`. Open `http://localhost:3000` when the log shows `Starting NextCRM...`.
+Watch the startup with `docker compose logs -f app`. Open `http://localhost:3000` when the log shows `Starting NEX101 Hub...`.
 
 </Step>
 </Steps>

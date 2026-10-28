@@ -2,6 +2,17 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
+:root {
+  --color-fd-primary: hsl(336 100% 40.4%);
+  --color-fd-primary-foreground: hsl(0 0% 100%);
+  --color-fd-ring: hsl(336 100% 40.4%);
+}
+
+.dark {
+  --color-fd-primary: hsl(336 100% 50%);
+  --color-fd-ring: hsl(336 100% 50%);
+}
+
 html {
   scrollbar-gutter: stable;
 }

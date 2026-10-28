@@ -5,6 +5,6 @@ export function GET(request: Request) {
   const to = url.searchParams.get('to') ?? 'latest';
   const from = url.searchParams.get('from') ?? '/docs';
   const target = to === 'latest' || getVersion(to) ? switchVersionUrl(from, to) : '/docs';
-  // Relative Location: behind the proxy request.url carries the container's host, not docs.nextcrm.app.
+  // Relative Location: behind the proxy request.url carries the container's host, not the public docs domain.
   return new Response(null, { status: 307, headers: { Location: target } });
 }

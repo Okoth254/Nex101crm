@@ -1,9 +1,9 @@
 ---
 title: Configuration reference
-description: Every environment variable NextCRM reads, grouped by area, with what it does and whether you need it.
+description: Every environment variable NEX101 Hub reads, grouped by area, with what it does and whether you need it.
 ---
 
-NextCRM is configured with environment variables. This page lists the variables the code actually reads; the example files in the repository (`.env.docker`, `.env.example`, `.env.local.example`) use the same names.
+NEX101 Hub is configured with environment variables. This page lists the variables the code actually reads; the example files in the repository (`.env.docker`, `.env.example`, `.env.local.example`) use the same names.
 
 A generated list of every variable the code reads, with the files that read it, is in [Environment variables](/docs/reference/environment).
 
@@ -52,7 +52,7 @@ Sessions last 7 days and are refreshed every 24 hours. Password login is disable
 
 ## File storage
 
-NextCRM talks to any S3-compatible store through the AWS SDK with path-style URLs.
+NEX101 Hub talks to any S3-compatible store through the AWS SDK with path-style URLs.
 
 | Variable | Required | What it does |
 |---|---|---|
@@ -141,8 +141,6 @@ Details: [Calendar](/docs/admins/integrations/calendar).
 
 | Variable | Required | What it does |
 |---|---|---|
-| `NEXT_PUBLIC_GITHUB_REPO_URL`, `NEXT_PUBLIC_GITHUB_ISSUES_URL`, `NEXT_PUBLIC_DISCORD_INVITE_URL` | No | Targets of the GitHub, issues and Discord links in the UI. |
-| `NEXT_PUBLIC_GITHUB_REPO_API`, `NEXT_PUBLIC_GITHUB_TOKEN` | No | Used to show the GitHub star count. Leave the token empty. |
-| `NEXT_PUBLIC_NEXT_VERSION` | No | Fallback version string in the footer. |
+| `NEXT_PUBLIC_SUPPORT_URL` | No | Target of the help link in the header (for example `mailto:support@example.com`). Defaults to `https://support.nex101hub.com`. Set it to an empty value to hide the help control. |
 | `SKIP_ENV_VALIDATION` | Build only | The Dockerfile sets it during `next build`. At runtime it also skips plugin upgrades on boot, so do not set it on a running instance. |
 | `NODE_ENV` | Set by the image | `production` in the Docker image. Outside production the app enables test helpers that expose login codes, so always run real instances with `production`. |
